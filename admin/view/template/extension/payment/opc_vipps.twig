@@ -1,0 +1,167 @@
+{{ header }}{{ column_left }}
+<div id="content">
+  <ul class="breadcrumb">
+    {% for breadcrumb in breadcrumbs %}
+    <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+    {% endfor %}
+  </ul>
+  <div class="page-header">
+    <div class="container-fluid">
+      <div class="pull-right">
+        <button type="submit" form="form-pilibaba" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
+        <a href="{{cancel}}" data-toggle="tooltip" title="{{button_cancel}}" class="btn btn-default"><i class="fa fa-reply"></i></a></div>
+      <h1>{{heading_title}}</h1>
+    </div>
+  </div>
+  <div class="container-fluid">
+    {% if error_warning %}
+    <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> <?php echo $error_warning; ?>
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    {% endif %}
+
+    {% if success %}
+    <div class="alert alert-success"><i class="fa fa-check-circle"></i> <?php echo $success; ?>
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    {% endif %}
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><i class="fa fa-pencil"></i> {{text_edit}}</h3>
+      </div>
+      <div class="panel-body">
+        <form action="{{action}}" method="post" enctype="multipart/form-data" id="form-payment_opc_vipps" class="form-horizontal">
+		  <ul class="nav nav-tabs">
+		      <li class="active" id="li-tab-settings"><a href="#tab-settings" data-toggle="tab">{{tab_settings}}</a></li>
+		  </ul>
+		  <div class="tab-content">
+		    <div class="tab-pane active" id="tab-settings">
+			<div class="form-group">
+                  <label class="col-sm-2 control-label" for="input-payment_opc_vipps_profile_name"></label>
+                  <div class="col-sm-10">
+				  {{ text_instructions }}
+                  </div>
+              </div>
+			
+			<div class="form-group">
+                  <label class="col-sm-2 control-label" for="input-payment_opc_vipps_profile_name">{{entry_profile}}</label>
+                  <div class="col-sm-10">
+                  <input type="text" name="payment_opc_vipps_profile_name" value="{{ payment_opc_vipps_profile_name }}" placeholder="{{entry_profile}}" id="input-payment_opc_vipps_profile_name" class="form-control" />
+                  </div>
+              </div>
+			  
+			  <div class="form-group">
+                  <label class="col-sm-2 control-label" for="input-payment_opc_vipps_merchant_serial">{{entry_merchant_serial}}</label>
+                  <div class="col-sm-10">
+                  <input type="text" name="payment_opc_vipps_merchant_serial" value="{{ payment_opc_vipps_merchant_serial }}" placeholder="{{entry_merchant_serial}}" id="input-payment_opc_vipps_merchant_serial" class="form-control" />
+                  </div>
+              </div>
+			  
+			  <div class="form-group">
+                  <label class="col-sm-2 control-label" for="input-payment_opc_vipps_client_id">{{ entry_client_id }}</label>
+                  <div class="col-sm-10">
+                  <input type="text" name="payment_opc_vipps_client_id" value="{{ payment_opc_vipps_client_id }}" placeholder="{{ entry_client_id }}" id="input-payment_opc_vipps_client_id" class="form-control" />
+                  </div>
+              </div>
+			  
+			  <div class="form-group">
+                  <label class="col-sm-2 control-label" for="input-payment_opc_vipps_application_secret">{{ entry_application_secret }}</label>
+                  <div class="col-sm-10">
+                  <input type="text" name="payment_opc_vipps_application_secret" value="{{ payment_opc_vipps_application_secret }}" placeholder="{{ entry_application_secret }}" id="input-payment_opc_vipps_application_secret" class="form-control" />
+                  </div>
+              </div>
+			  
+			  <div class="form-group">
+                  <label class="col-sm-2 control-label" for="input-payment_opc_vipps_subscription_key_access">{{ entry_subscription_key_access }}</label>
+                  <div class="col-sm-10">
+                  <input type="text" name="payment_opc_vipps_subscription_key_access" value="{{ payment_opc_vipps_subscription_key_access }}" placeholder="{{ entry_subscription_key_access }}" id="input-payment_opc_vipps_subscription_key_access" class="form-control" />
+                  </div>
+              </div>
+
+              <div class="form-group">
+                  <label class="col-sm-2 control-label" for="input-payment_opc_vipps_subscription_key_ecommerce">{{ entry_subscription_key_ecommerce }}</label>
+                  <div class="col-sm-10">
+                  <input type="text" name="payment_opc_vipps_subscription_key_ecommerce" value="{{ payment_opc_vipps_subscription_key_ecommerce }}" placeholder="{{ entry_subscription_key_ecommerce }}" id="input-payment_opc_vipps_subscription_key_ecommerce" class="form-control" />
+                  </div>
+              </div>
+
+			
+
+              <div class="form-group">
+                  <label class="col-sm-2 control-label" for="input-payment_opc_vipps_callback_Prefix">{{ entry_callback_Prefix }}</label>
+                  <div class="col-sm-10">
+                  <input type="text" name="payment_opc_vipps_callback_Prefix" value="{{ payment_opc_vipps_callback_Prefix }}" placeholder="{{ entry_callback_Prefix }}" id="input-payment_opc_vipps_callback_Prefix" class="form-control" />
+                  </div>
+              </div>
+			  
+			  
+
+              <div class="form-group">
+                  <label class="col-sm-2 control-label" for="input-payment_opc_vipps_fall_back">{{ entry_fall_back }}</label>
+                  <div class="col-sm-10">
+                  <input type="text" name="payment_opc_vipps_fall_back" value="{{ payment_opc_vipps_fall_back }}" placeholder="{{ entry_fall_back }}" id="input-payment_opc_vipps_fall_back" class="form-control" />
+                  </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-payment_opc_vipps_environment">
+                  <span data-toggle="tooltip" data-original-title="{{help_test}}">
+                    {{entry_environment}}
+                  </span>
+                </label>
+                <div class="col-sm-10">
+                  <select name="payment_opc_vipps_environment" id="input-payment_opc_vipps_environment" class="form-control">
+                    {% if payment_opc_vipps_environment == 'live' %}
+                    <option value="live" selected="selected">{{text_live}}</option>
+                    <option value="test">{{text_test}}</option>
+                    {% elseif payment_opc_vipps_environment == 'test' %}
+                    <option value="live">{{text_live}}</option>
+                    <option value="test" selected="selected">{{text_test}}</option>
+                    {% endif %}
+                  </select>
+                </div>
+              </div>
+			  
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-payment_opc_vipps_status">{{entry_status}}</label>
+                <div class="col-sm-10">
+                  <select name="payment_opc_vipps_status" id="input-payment_opc_vipps_status" class="form-control">
+                    {% if payment_opc_vipps_status==1 %}
+                    <option value="1" selected="selected">{{text_enabled}}</option>
+                    <option value="0">{{text_disabled}}</option>
+                    {% else %}
+                    <option value="1">{{text_enabled}}</option>
+                    <option value="0" selected="selected">{{text_disabled}}</option>
+                    {% endif %}
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-order-status">{{entry_order_status}}</label>
+                <div class="col-sm-10">
+                  <select name="payment_opc_vipps_order_status_id" id="input-order-status" class="form-control">
+
+                    {% for order_status in order_statuses %}
+                      {% if order_status.order_status_id == payment_opc_vipps_order_status_id %}
+                        <option value="{{order_status.order_status_id}}" selected="selected">{{order_status.name}}</option>
+                      {% else %}
+                        <option value="{{order_status.order_status_id}}">{{order_status.name}}</option>
+                      {% endif %}
+                    {% endfor %}
+                  </select>
+                </div>
+              </div>
+
+		    </div>
+		  </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{{footer}}
