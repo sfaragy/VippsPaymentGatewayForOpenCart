@@ -11,7 +11,8 @@ How to get Vipps account keys from Vipps Developer Portal
 To by complete extension please visit:
 https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=41721
 
-Video demo: <iframe width="560" height="315" src="https://www.youtube.com/embed/raEQGo4pHmk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Video demo: 
+[![Alt text](https://img.youtube.com/vi/raEQGo4pHmk/0.jpg)](https://www.youtube.com/watch?v=raEQGo4pHmk)
 
 Visit my official site: <a href="https://www.bangloss.com" target="_blank">https://www.bangloss.com</a>
 
